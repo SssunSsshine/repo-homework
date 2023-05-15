@@ -46,7 +46,7 @@ public class UserRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public User getById(Long id) {
+    public User getById(Long notId) {
         try {
             return jdbcTemplate.queryForObject(SELECT_BY_ID_QUERY, (rs, rowNum) -> getUserByResultSet(rs), id);
         } catch (DataAccessException e) {
