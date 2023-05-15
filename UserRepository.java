@@ -1,4 +1,3 @@
-/*Модуль для работы с БД*/
 package com.vsu.app.repository;
 
 import com.vsu.app.entity.User;
@@ -46,7 +45,7 @@ public class UserRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public User getById(Long notId) {
+    public User getById(Long idUser) {
         try {
             return jdbcTemplate.queryForObject(SELECT_BY_ID_QUERY, (rs, rowNum) -> getUserByResultSet(rs), id);
         } catch (DataAccessException e) {
